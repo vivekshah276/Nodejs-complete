@@ -126,6 +126,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(URI)
   .then((result) => {
+    console.log("Connected")
     // https.createServer({key: privateKey, cert: certificate},app)
     app.listen(process.env.PORT || 3000, () => {
       console.log("Server is listening");

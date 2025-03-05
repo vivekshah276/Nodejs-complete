@@ -189,7 +189,7 @@ exports.deleteProduct = (req, res, next) => {
       return Product.deleteOne({ _id: prodId, userId: req.user._id });
     })
     .then(() => {
-      console.log('DESTROYED PRODUCT');
+      console.log('Destroyed Product');
       res.status(200).json({ message: 'Success!' });
     })
     .catch(err => {
