@@ -17,7 +17,7 @@ dotenv.config()
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
-const URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ah383.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`;
+const URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ah383.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority&tls=true`;
 
 const flash = require("connect-flash");
 const csrf = require("csurf");
