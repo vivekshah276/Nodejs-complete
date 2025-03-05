@@ -11,6 +11,8 @@ const User = require("./models/user.js");
 const multer = require("multer");
 const compression = require("compression")
 const morgan = require("morgan")
+const dotenv = require("dotenv")
+dotenv.config()
 
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -122,12 +124,13 @@ app.use((error, req, res, next) => {
     isAuthenticated: req.session.isLoggedIn,
   });
 });
-
+console.log(URI)
 mongoose
   .connect(URI)
   .then((result) => {
     console.log("Connected")
     // https.createServer({key: privateKey, cert: certificate},app)
+    console.log(process.env.PORT)
     app.listen(process.env.PORT || 3000, () => {
       console.log("Server is listening");
     });
